@@ -8,8 +8,8 @@ from config.settings import NCBI_EMAIL, NCBI_API_KEY
 Entrez.email = NCBI_EMAIL
 Entrez.api_key = NCBI_API_KEY
 
-def fetch_pubmed_id(query, maxresults=100):
-    handle = Entrez.esearch(db="pubmed", term=query, retmax=maxresults)
+def fetch_pubmed_id(query, max_results=100):
+    handle = Entrez.esearch(db="pubmed", term=query, retmax=max_results)
     record = Entrez.read(handle)
     handle.close()
     return record["IdList"] 
@@ -48,3 +48,22 @@ def fetch_pubmed_abstracts(id_list, batch_size=20):
         time.sleep(0.3)  # NCBI rate limits
 
     return abstracts
+
+def save_to_json(data, output_file):
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+
+def fetch_and_save_pubmed_abstracts(query, max_results=100):
+    for tag, query in SEARCH_QUERIES.items():
+        ids = fetch_pubmed_ids(query, max_results=200)
+        print(f"Found {len(ids)} articles.")
+
+        abstracts = fetch_pubmed_abstracts(ids)
+        # Auto-tagging source type
+        source_type = "Bangladesh-specific" if "Bangladesh" in query else "Global"
+        for doc in abstracts:
+            doc["source_type"] = source_type
+
+        output_file = f"data/processed/{tag}.json"
+        save_to_json(abstracts, output_file)
