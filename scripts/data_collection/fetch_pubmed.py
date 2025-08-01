@@ -56,7 +56,7 @@ def save_to_json(data, output_file):
 
 def fetch_and_save_pubmed_abstracts(query, max_results=100):
     for tag, query in SEARCH_QUERIES.items():
-        ids = fetch_pubmed_ids(query, max_results=200)
+        ids = fetch_pubmed_id(query, max_results=100)
         print(f"Found {len(ids)} articles.")
 
         abstracts = fetch_pubmed_abstracts(ids)
@@ -143,4 +143,4 @@ SEARCH_QUERIES = {
 }
 
 
-fetch_and_save_pubmed_abstracts(query= SearchQueries, max_results=100)
+fetch_and_save_pubmed_abstracts(query=SEARCH_QUERIES, max_results=100)
