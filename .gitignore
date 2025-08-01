@@ -4,3 +4,4 @@ todo.txt
 __pycache__/
 .python-version
 *.pyc
+.ipynb_checkpoints
