@@ -9,10 +9,10 @@ Entrez.email = NCBI_EMAIL
 Entrez.api_key = NCBI_API_KEY
 
 def fetch_pubmed_id(query, maxresults=100):
-    handle = Entrez.esearch(db="pubmed", term=query, retmax=max_results)
+    handle = Entrez.esearch(db="pubmed", term=query, retmax=maxresults)
     record = Entrez.read(handle)
     handle.close()
-    return record["IdList"]
+    return record["IdList"] 
 
 def fetch_pubmed_abstracts(id_list, batch_size=20):
     abstracts = []
