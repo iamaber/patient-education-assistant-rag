@@ -67,3 +67,80 @@ def fetch_and_save_pubmed_abstracts(query, max_results=100):
 
         output_file = f"data/processed/{tag}.json"
         save_to_json(abstracts, output_file)
+        
+SEARCH_QUERIES = {
+    # Infectious Diseases (High Priority for Bangladesh)
+    "dengue_bangladesh": "Dengue AND Bangladesh",
+    "dengue_global": "Dengue AND (Treatment OR Guidelines)",
+    "typhoid_bangladesh": "Typhoid Fever AND Bangladesh",
+    "typhoid_global": "Typhoid Fever AND (Treatment OR Management)",
+    "malaria_bangladesh": "Malaria AND Bangladesh",
+    "malaria_global": "Malaria AND (Treatment OR Prevention)",
+    "hepatitis_bangladesh": "Hepatitis AND Bangladesh",
+    "hepatitis_global": "Hepatitis AND (Treatment OR Management)",
+    "diarrhea_bangladesh": "Diarrhea AND Bangladesh",
+    "diarrhea_global": "Diarrhea AND (Treatment OR Guidelines)",
+    "tuberculosis_bangladesh": "Tuberculosis AND Bangladesh",
+    "tuberculosis_global": "Tuberculosis AND (Treatment OR WHO Guidelines)",
+    "cholera_bangladesh": "Cholera AND Bangladesh",
+    "cholera_global": "Cholera AND (Management OR Treatment)",
+    "leptospirosis_bangladesh": "Leptospirosis AND Bangladesh",
+    "leptospirosis_global": "Leptospirosis AND Treatment",
+    "leishmaniasis_bangladesh": "Leishmaniasis AND Bangladesh",
+    "leishmaniasis_global": "Leishmaniasis AND Treatment",
+    "influenza_bangladesh": "Influenza AND Bangladesh",
+    "influenza_global": "Influenza AND Treatment",
+
+    # Non-Communicable Diseases (NCDs)
+    "diabetes_bangladesh": "Diabetes AND Bangladesh",
+    "diabetes_global": "Diabetes AND (Management OR Treatment)",
+    "hypertension_bangladesh": "Hypertension AND Bangladesh",
+    "hypertension_global": "Hypertension AND Guidelines",
+    "cardiovascular_bangladesh": "Cardiovascular Diseases AND Bangladesh",
+    "cardiovascular_global": "Cardiovascular Diseases AND Treatment",
+    "ckd_bangladesh": "Chronic Kidney Disease AND Bangladesh",
+    "ckd_global": "Chronic Kidney Disease AND Management",
+    "cancer_bangladesh": "Cancer AND Bangladesh",
+    "cancer_global": "Cancer AND (Treatment OR Management)",
+
+    # Maternal & Child Healt
+    "maternal_health_bangladesh": "Maternal Health AND Bangladesh",
+    "maternal_health_global": "Maternal Health AND Guidelines",
+    "neonatal_care_bangladesh": "Neonatal Care AND Bangladesh",
+    "neonatal_care_global": "Neonatal Care AND WHO Guidelines",
+    "malnutrition_bangladesh": "Malnutrition AND Bangladesh",
+    "malnutrition_global": "Malnutrition AND Treatment",
+    "immunization_bangladesh": "Vaccination AND Bangladesh",
+    "immunization_global": "Immunization AND WHO Guidelines",
+
+    # Public Health & Surveillance
+    "surveillance_bangladesh": "Disease Surveillance AND Bangladesh",
+    "surveillance_global": "Disease Surveillance AND WHO",
+    "outbreak_management_bangladesh": "Outbreak Response AND Bangladesh",
+    "outbreak_management_global": "Outbreak Response AND Guidelines",
+    "health_policy_bangladesh": "Health Policy AND Bangladesh",
+    "health_policy_global": "Health Policy AND Guidelines",
+
+    # Drug & Treatment Protocols
+    "amr_bangladesh": "Antibiotic Resistance AND Bangladesh",
+    "amr_global": "Antimicrobial Resistance AND WHO Guidelines",
+    "essential_medicines_bangladesh": "Essential Medicines AND Bangladesh",
+    "essential_medicines_global": "Essential Medicines AND WHO Guidelines",
+    "drug_pricing_bangladesh": "Drug Pricing AND Bangladesh",
+    "drug_pricing_global": "Drug Pricing AND Policies",
+
+    # General Bangladesh Healthcare Queries
+    "healthcare_system_bangladesh": "Healthcare System AND Bangladesh",
+    "primary_healthcare_bangladesh": "Primary Healthcare AND Bangladesh",
+    "rural_health_services_bangladesh": "Rural Health Services AND Bangladesh",
+    "community_health_workers_bangladesh": "Community Health Workers AND Bangladesh",
+
+    # General Thematic Searches
+    "thematic_infectious_diseases_bd": "Infectious Diseases AND Bangladesh",
+    "thematic_ncd_bd": "Non-communicable Diseases AND Bangladesh",
+    "thematic_public_health_guidelines_bd": "Public Health Guidelines AND Bangladesh",
+    "thematic_disease_surveillance_reports_bd": "Bangladesh Disease Surveillance Reports",
+}
+
+
+fetch_and_save_pubmed_abstracts(query= SearchQueries, max_results=100)
