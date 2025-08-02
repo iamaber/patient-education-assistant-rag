@@ -2,6 +2,7 @@ import os
 import json
 import uuid
 from scripts.preprocessing.pdf_to_text import process_pdf_to_chunks
+from scripts.preprocessing.clean_text import remove_stopwords, lemmatize_text
 
 # define directories
 RAW_PDF_DIR = "data/raw/"
@@ -28,11 +29,15 @@ def fetch_who_guidelines():
             
             for i, chunk in enumerate(chunks):
                 if chunk.strip():  # Only add non-empty chunks
+                    # Clean the text
+                    cleaned_chunk = remove_stopwords(chunk)
+                    cleaned_chunk = lemmatize_text(cleaned_chunk)
+                    
                     doc_id = str(uuid.uuid4())
                     all_docs.append({
                         "id": doc_id,
                         "title": filename.replace(".pdf", ""),
-                        "body": chunk,
+                        "body": cleaned_chunk,
                         "source": f"WHO Guidelines: {filename}",
                         "language": "en",
                         "source_type": "Global"
