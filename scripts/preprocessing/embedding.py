@@ -31,3 +31,11 @@ def load_data(directory):
                 else:
                     documents.append(data)
     return documents
+
+
+def create_and_save_faiss_index(embeddings, documents):
+    dimension = embeddings.shape[1]
+    index = faiss.IndexFlatL2(dimension)  # L2 distance for similarity search
+    index.add(embeddings)
+    faiss.write_index(index, FAISS_INDEX_PATH)
+    print(f"FAISS index created and saved to {FAISS_INDEX_PATH}")
