@@ -7,6 +7,8 @@ requires-python = ">=3.11"
 dependencies = [
     "beautifulsoup4>=4.12.0",
     "biopython>=1.85",
+    "jupyterlab>=0.2.4",
+    "dotenv>=0.9.9",
     "elasticsearch>=8.10.0",
     "faiss-cpu>=1.7.4",
     "fastapi[standard]>=0.104.0",
