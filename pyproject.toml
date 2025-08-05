@@ -27,7 +27,7 @@ dependencies = [
     "scikit-learn>=1.3.0",
     "sentence-transformers>=2.2.2",
     "spacy>=3.7.0",
-    "torch>=2.0.0",
+    # "torch>=2.0.0",  # Provided by RunPod PyTorch template
     "transformers>=4.35.0",
     "uvicorn[standard]>=0.24.0",
 ]
