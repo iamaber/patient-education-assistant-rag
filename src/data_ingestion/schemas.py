@@ -4,16 +4,16 @@ from pydantic import BaseModel, Field
 
 class DrugEntry(BaseModel):
     brand_name: str
-    generic_name: str
-    indications: str
+    generic_name: Optional[str] = None
+    indications: Optional[str] = None
     dosage_and_administration: Optional[str] = None
-    side_effects: str
+    side_effects: Optional[str] = None
     pregnancy_and_lactation: Optional[str] = None
-    precautions_and_warnings: str
-    overdose_effects: str
-    dosage_form: Optional[str]
-    strength: Optional[str]
-    unit_price: Optional[str]
+    precautions_and_warnings: Optional[str] = None
+    overdose_effects: Optional[str] = None
+    dosage_form: Optional[str] = None
+    strength: Optional[str] = None
+    unit_price: Optional[str] = None
 
 
 class GuidelineChunk(BaseModel):
