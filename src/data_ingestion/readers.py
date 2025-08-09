@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from typing import List, Iterable
 
-from schemas import DrugEntry, GuidelineChunk
+from .schemas import DrugEntry, GuidelineChunk
 
 
 def load_drug_entries(path: Path) -> List[DrugEntry]:
