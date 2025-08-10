@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 
 
 class DrugEntry(BaseModel):
-    brand_name: Optional[str] = None
+    brand_name: str
     generic_name: Optional[str] = None
     indications: Optional[str] = None
     dosage_and_administration: Optional[str] = None
