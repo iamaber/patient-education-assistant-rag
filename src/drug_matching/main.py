@@ -8,4 +8,4 @@ app = FastAPI()
 async def match_drug(input_drug: str):
     matcher = DrugMatcher()
     results = matcher.match(input_drug)
-    return [result.dict() for result in results]
+    return [r.dict() for r in results]
