@@ -16,3 +16,8 @@ EMBEDDING_MODEL = os.getenv(
 )
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "256"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "32"))
+
+CONDITION_MIN_CONFIDENCE = float(os.getenv("MIN_CONDITION_CONF", "0.8"))
+ICD10_MAPPING_PATH = Path(
+    os.getenv("ICD10_MAPPING_PATH", "data/mappings/icd10_keywords.json")
+)
