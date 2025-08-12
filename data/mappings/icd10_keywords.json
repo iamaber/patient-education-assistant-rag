@@ -1,0 +1,337 @@
+{
+  "diabetes": {
+    "conditions": ["Type 2 Diabetes Mellitus"],
+    "icd10": "E11",
+    "patterns": ["diabetes", "diabetic", "hyperglycemia", "hyperglycaemia", "blood sugar", "glucose"]
+  },
+  "hypertension": {
+    "conditions": ["Essential Hypertension"],
+    "icd10": "I10",
+    "patterns": ["hypertension", "high blood pressure", "elevated blood pressure", "hypertensive"]
+  },
+  "infection": {
+    "conditions": ["Bacterial Infection"],
+    "icd10": "A49",
+    "patterns": ["infection", "bacterial", "sepsis", "abscess", "cellulitis"]
+  },
+  "pneumonia": {
+    "conditions": ["Pneumonia"],
+    "icd10": "J18",
+    "patterns": ["pneumonia", "lung infection", "respiratory infection"]
+  },
+  "asthma": {
+    "conditions": ["Asthma"],
+    "icd10": "J45",
+    "patterns": ["asthma", "bronchial asthma", "bronchospasm", "wheezing"]
+  },
+  "depression": {
+    "conditions": ["Major Depressive Disorder"],
+    "icd10": "F33",
+    "patterns": ["depression", "depressive", "major depression", "mood disorder"]
+  },
+  "anxiety": {
+    "conditions": ["Anxiety Disorder"],
+    "icd10": "F41",
+    "patterns": ["anxiety", "anxious", "panic", "generalized anxiety"]
+  },
+  "pain": {
+    "conditions": ["Chronic Pain"],
+    "icd10": "R52",
+    "patterns": ["pain", "chronic pain", "neuropathic pain", "inflammatory pain", "analgesic"]
+  },
+  "fever": {
+    "conditions": ["Fever"],
+    "icd10": "R50",
+    "patterns": ["fever", "pyrexia", "febrile", "hyperthermia"]
+  },
+  "arthritis": {
+    "conditions": ["Rheumatoid Arthritis"],
+    "icd10": "M06",
+    "patterns": ["arthritis", "rheumatoid", "joint pain", "inflammatory arthritis"]
+  },
+  "osteoporosis": {
+    "conditions": ["Osteoporosis"],
+    "icd10": "M81",
+    "patterns": ["osteoporosis", "bone loss", "bone density", "fracture prevention"]
+  },
+  "heart_failure": {
+    "conditions": ["Heart Failure"],
+    "icd10": "I50",
+    "patterns": ["heart failure", "cardiac failure", "congestive heart failure", "CHF"]
+  },
+  "arrhythmia": {
+    "conditions": ["Cardiac Arrhythmia"],
+    "icd10": "I49",
+    "patterns": ["arrhythmia", "irregular heartbeat", "atrial fibrillation", "tachycardia", "bradycardia"]
+  },
+  "migraine": {
+    "conditions": ["Migraine"],
+    "icd10": "G43",
+    "patterns": ["migraine", "headache", "severe headache", "cephalgia"]
+  },
+  "epilepsy": {
+    "conditions": ["Epilepsy"],
+    "icd10": "G40",
+    "patterns": ["epilepsy", "seizure", "convulsion", "anticonvulsant"]
+  },
+  "ulcer": {
+    "conditions": ["Peptic Ulcer"],
+    "icd10": "K27",
+    "patterns": ["ulcer", "peptic ulcer", "gastric ulcer", "duodenal ulcer"]
+  },
+  "gerd": {
+    "conditions": ["Gastroesophageal Reflux Disease"],
+    "icd10": "K21",
+    "patterns": ["GERD", "acid reflux", "gastroesophageal reflux", "heartburn"]
+  },
+  "allergy": {
+    "conditions": ["Allergic Reaction"],
+    "icd10": "T78",
+    "patterns": ["allergy", "allergic", "hypersensitivity", "anaphylaxis"]
+  },
+  "hyperlipidemia": {
+    "conditions": ["Hyperlipidemia"],
+    "icd10": "E78",
+    "patterns": ["hyperlipidemia", "high cholesterol", "dyslipidemia", "lipid disorder"]
+  },
+  "obesity": {
+    "conditions": ["Obesity"],
+    "icd10": "E66",
+    "patterns": ["obesity", "overweight", "weight management", "BMI"]
+  },
+  "stroke": {
+    "conditions": ["Cerebrovascular Accident"],
+    "icd10": "I64",
+    "patterns": ["stroke", "cerebrovascular accident", "CVA", "brain attack", "cerebral infarction"]
+  },
+  "copd": {
+    "conditions": ["Chronic Obstructive Pulmonary Disease"],
+    "icd10": "J44",
+    "patterns": ["COPD", "chronic obstructive pulmonary disease", "emphysema", "chronic bronchitis"]
+  },
+  "ckd": {
+    "conditions": ["Chronic Kidney Disease"],
+    "icd10": "N18",
+    "patterns": ["chronic kidney disease", "CKD", "renal failure", "kidney disease", "nephropathy"]
+  },
+  "hypothyroidism": {
+    "conditions": ["Hypothyroidism"],
+    "icd10": "E03",
+    "patterns": ["hypothyroidism", "underactive thyroid", "thyroid deficiency", "myxedema"]
+  },
+  "hyperthyroidism": {
+    "conditions": ["Hyperthyroidism"],
+    "icd10": "E05",
+    "patterns": ["hyperthyroidism", "overactive thyroid", "thyrotoxicosis", "Graves disease"]
+  },
+  "anemia": {
+    "conditions": ["Iron Deficiency Anemia"],
+    "icd10": "D50",
+    "patterns": ["anemia", "anaemia", "iron deficiency", "low hemoglobin", "low haemoglobin"]
+  },
+  "cancer": {
+    "conditions": ["Malignant Neoplasm"],
+    "icd10": "C80",
+    "patterns": ["cancer", "malignancy", "tumor", "tumour", "neoplasm", "carcinoma", "oncology"]
+  },
+  "insomnia": {
+    "conditions": ["Insomnia"],
+    "icd10": "G47.0",
+    "patterns": ["insomnia", "sleeplessness", "sleep disorder", "sleep disturbance"]
+  },
+  "constipation": {
+    "conditions": ["Constipation"],
+    "icd10": "K59.0",
+    "patterns": ["constipation", "bowel obstruction", "hard stool", "difficult defecation"]
+  },
+  "diarrhea": {
+    "conditions": ["Diarrhea"],
+    "icd10": "K59.1",
+    "patterns": ["diarrhea", "diarrhoea", "loose stool", "watery stool", "gastroenteritis"]
+  },
+  "nausea": {
+    "conditions": ["Nausea and Vomiting"],
+    "icd10": "R11",
+    "patterns": ["nausea", "vomiting", "emesis", "morning sickness", "motion sickness"]
+  },
+  "vertigo": {
+    "conditions": ["Vertigo"],
+    "icd10": "H81",
+    "patterns": ["vertigo", "dizziness", "balance disorder", "spinning sensation"]
+  },
+  "glaucoma": {
+    "conditions": ["Glaucoma"],
+    "icd10": "H40",
+    "patterns": ["glaucoma", "increased intraocular pressure", "optic nerve damage"]
+  },
+  "cataracts": {
+    "conditions": ["Cataracts"],
+    "icd10": "H25",
+    "patterns": ["cataracts", "lens opacity", "cloudy vision"]
+  },
+  "osteoarthritis": {
+    "conditions": ["Osteoarthritis"],
+    "icd10": "M15",
+    "patterns": ["osteoarthritis", "degenerative joint disease", "joint wear", "cartilage loss"]
+  },
+  "fibromyalgia": {
+    "conditions": ["Fibromyalgia"],
+    "icd10": "M79.7",
+    "patterns": ["fibromyalgia", "chronic widespread pain", "muscle pain syndrome"]
+  },
+  "psoriasis": {
+    "conditions": ["Psoriasis"],
+    "icd10": "L40",
+    "patterns": ["psoriasis", "skin plaques", "scaly skin", "autoimmune skin condition"]
+  },
+  "eczema": {
+    "conditions": ["Atopic Dermatitis"],
+    "icd10": "L20",
+    "patterns": ["eczema", "atopic dermatitis", "skin inflammation", "itchy skin"]
+  },
+  "hepatitis": {
+    "conditions": ["Viral Hepatitis"],
+    "icd10": "B19",
+    "patterns": ["hepatitis", "liver inflammation", "hepatitis B", "hepatitis C"]
+  },
+  "cirrhosis": {
+    "conditions": ["Liver Cirrhosis"],
+    "icd10": "K74",
+    "patterns": ["cirrhosis", "liver fibrosis", "liver scarring", "end-stage liver disease"]
+  },
+  "pneumothorax": {
+    "conditions": ["Pneumothorax"],
+    "icd10": "J93",
+    "patterns": ["pneumothorax", "collapsed lung", "air in pleural space"]
+  },
+  "tuberculosis": {
+    "conditions": ["Tuberculosis"],
+    "icd10": "A15",
+    "patterns": ["tuberculosis", "TB", "mycobacterium", "pulmonary TB"]
+  },
+  "malaria": {
+    "conditions": ["Malaria"],
+    "icd10": "B54",
+    "patterns": ["malaria", "plasmodium", "tropical fever", "antimalarial"]
+  },
+  "dengue": {
+    "conditions": ["Dengue Fever"],
+    "icd10": "A90",
+    "patterns": ["dengue", "dengue fever", "breakbone fever", "aedes mosquito"]
+  },
+  "cholera": {
+    "conditions": ["Cholera"],
+    "icd10": "A00",
+    "patterns": ["cholera", "vibrio cholerae", "severe diarrhea", "dehydration"]
+  },
+  "typhoid": {
+    "conditions": ["Typhoid Fever"],
+    "icd10": "A01.0",
+    "patterns": ["typhoid", "typhoid fever", "salmonella typhi", "enteric fever"]
+  },
+  "meningitis": {
+    "conditions": ["Meningitis"],
+    "icd10": "G03",
+    "patterns": ["meningitis", "brain inflammation", "meningeal infection", "neck stiffness"]
+  },
+  "parkinsons": {
+    "conditions": ["Parkinson's Disease"],
+    "icd10": "G20",
+    "patterns": ["parkinson", "parkinsons", "tremor", "bradykinesia", "rigidity"]
+  },
+  "alzheimers": {
+    "conditions": ["Alzheimer's Disease"],
+    "icd10": "G30",
+    "patterns": ["alzheimer", "alzheimers", "dementia", "memory loss", "cognitive decline"]
+  },
+  "schizophrenia": {
+    "conditions": ["Schizophrenia"],
+    "icd10": "F20",
+    "patterns": ["schizophrenia", "psychosis", "hallucinations", "delusions", "antipsychotic"]
+  },
+  "bipolar": {
+    "conditions": ["Bipolar Disorder"],
+    "icd10": "F31",
+    "patterns": ["bipolar", "manic depression", "mood swings", "mania", "mood stabilizer"]
+  },
+  "adhd": {
+    "conditions": ["Attention Deficit Hyperactivity Disorder"],
+    "icd10": "F90",
+    "patterns": ["ADHD", "attention deficit", "hyperactivity", "stimulant", "focus problems"]
+  },
+  "autism": {
+    "conditions": ["Autism Spectrum Disorder"],
+    "icd10": "F84",
+    "patterns": ["autism", "autistic", "ASD", "developmental disorder", "social communication"]
+  },
+  "pregnancy": {
+    "conditions": ["Pregnancy"],
+    "icd10": "Z33",
+    "patterns": ["pregnancy", "pregnant", "prenatal", "antenatal", "gestational"]
+  },
+  "menopause": {
+    "conditions": ["Menopause"],
+    "icd10": "N95",
+    "patterns": ["menopause", "menopausal", "hot flashes", "hormone replacement", "estrogen deficiency"]
+  },
+  "endometriosis": {
+    "conditions": ["Endometriosis"],
+    "icd10": "N80",
+    "patterns": ["endometriosis", "pelvic pain", "menstrual disorders", "uterine tissue"]
+  },
+  "bph": {
+    "conditions": ["Benign Prostatic Hyperplasia"],
+    "icd10": "N40",
+    "patterns": ["BPH", "benign prostatic hyperplasia", "enlarged prostate", "urinary retention"]
+  },
+  "ed": {
+    "conditions": ["Erectile Dysfunction"],
+    "icd10": "N52",
+    "patterns": ["erectile dysfunction", "ED", "impotence", "sexual dysfunction"]
+  },
+  "uti": {
+    "conditions": ["Urinary Tract Infection"],
+    "icd10": "N39.0",
+    "patterns": ["UTI", "urinary tract infection", "cystitis", "bladder infection", "dysuria"]
+  },
+  "kidney_stones": {
+    "conditions": ["Kidney Stones"],
+    "icd10": "N20",
+    "patterns": ["kidney stones", "renal calculi", "nephrolithiasis", "urolithiasis"]
+  },
+  "gout": {
+    "conditions": ["Gout"],
+    "icd10": "M10",
+    "patterns": ["gout", "uric acid", "hyperuricemia", "gouty arthritis", "tophi"]
+  },
+  "lupus": {
+    "conditions": ["Systemic Lupus Erythematosus"],
+    "icd10": "M32",
+    "patterns": ["lupus", "SLE", "autoimmune", "systemic lupus", "butterfly rash"]
+  },
+  "multiple_sclerosis": {
+    "conditions": ["Multiple Sclerosis"],
+    "icd10": "G35",
+    "patterns": ["multiple sclerosis", "MS", "demyelinating disease", "neurological disorder"]
+  },
+  "burns": {
+    "conditions": ["Burns"],
+    "icd10": "T30",
+    "patterns": ["burns", "thermal injury", "scalds", "fire injury", "burn wound"]
+  },
+  "fracture": {
+    "conditions": ["Fracture"],
+    "icd10": "S72",
+    "patterns": ["fracture", "broken bone", "bone break", "orthopedic injury"]
+  },
+  "wound": {
+    "conditions": ["Open Wound"],
+    "icd10": "T14.1",
+    "patterns": ["wound", "laceration", "cut", "injury", "trauma"]
+  },
+  "poisoning": {
+    "conditions": ["Poisoning"],
+    "icd10": "T65",
+    "patterns": ["poisoning", "toxic exposure", "overdose", "intoxication", "antidote"]
+  }
+}
