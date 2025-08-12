@@ -21,3 +21,9 @@ CONDITION_MIN_CONFIDENCE = float(os.getenv("MIN_CONDITION_CONF", "0.8"))
 ICD10_MAPPING_PATH = Path(
     os.getenv("ICD10_MAPPING_PATH", "data/mappings/icd10_keywords.json")
 )
+
+
+RETRIEVER_TOP_K = int(os.getenv("RETRIEVER_TOP_K", "5"))
+RERANK_CROSS_ENCODER = os.getenv(
+    "RERANK_CROSS_ENCODER", "cross-encoder/ms-marco-MiniLM-L-6-v2"
+)
