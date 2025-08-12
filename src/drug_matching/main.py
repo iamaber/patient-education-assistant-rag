@@ -1,11 +1,11 @@
 from fastapi import FastAPI
+from drug_matching.schemas import MatchResult
 from src.drug_matching.matcher import DrugMatcher
 
-app = FastAPI()
+app = FastAPI(title="RAG-Med DrugMatcher")
+matcher = DrugMatcher()
 
 
-@app.post("/match_drug/")
-async def match_drug(input_drug: str):
-    matcher = DrugMatcher()
-    results = matcher.match(input_drug)
-    return [r.dict() for r in results]
+@app.post("/match_drug", response_model=list[MatchResult])
+async def match_drug(query: str):
+    return matcher.match(query)
