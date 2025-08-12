@@ -27,3 +27,11 @@ RETRIEVER_TOP_K = int(os.getenv("RETRIEVER_TOP_K", "5"))
 RERANK_CROSS_ENCODER = os.getenv(
     "RERANK_CROSS_ENCODER", "cross-encoder/ms-marco-MiniLM-L-6-v2"
 )
+
+
+LLM_MODEL_NAME = os.getenv(
+    "LLM_MODEL_NAME", "microsoft/DialoGPT-medium"
+)  # or meta-llama/Llama-3-8B-Instruct
+MAX_TOKENS = int(os.getenv("MAX_TOKENS", "256"))
+REPLY_TEMPERATURE = float(os.getenv("REPLY_TEMPERATURE", "0.3"))
+USE_4BIT_QUANT = os.getenv("USE_4BIT_QUANT", "true").lower() == "true"
