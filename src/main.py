@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.drug_matching.matcher import DrugMatcher
 from src.condition_extractor.extractor import ConditionExtractor
+from src.condition_extractor.schemas import Condition as ConditionSchema
 from src.guideline_retriever.retriever import GuidelineRetriever
 from src.rag_generator.generator import RAGGenerator
 from src.guideline_formatter.formatter import to_markdown
@@ -32,11 +33,8 @@ async def diagnose(medicines: list[str]):
 
 
 @app.post("/guidelines")
-async def guidelines(conditions: list):
+async def guidelines(conditions: list[ConditionSchema]):
     """Step 2+3+4: conditions → chunks → LLM → formatted"""
-    from src.condition_extractor.schemas import Condition as C
-
-    cond_objs = [C(**c) for c in conditions]
-    chunks = retriever.retrieve(cond_objs)
-    guideline = generator.generate(cond_objs, chunks)
+    chunks = retriever.retrieve(conditions)
+    guideline = generator.generate(conditions, chunks)
     return {"guideline": guideline.dict(), "markdown": to_markdown(guideline)}
