@@ -1,20 +1,21 @@
 import gradio as gr
 import httpx
-
-from src.guideline_formatter.formatter import to_markdown
-from src.rag_generator.schemas import PatientGuideline
 from src.condition_extractor.schemas import Condition
+from src.rag_generator.schemas import PatientGuideline
+from src.guideline_formatter.formatter import to_markdown
 
-API_URL = "http://localhost:8000/guidelines"
 DIAGNOSE_URL = "http://localhost:8000/diagnose"
+GUIDELINES_URL = "http://localhost:8000/guidelines"
+HTTP_TIMEOUT = 30
 
 
-def run_pipeline(medicines: str):
+def run_pipeline(medicines: str) -> str:
+    """End-to-end pipeline: medicines → conditions → guidelines → markdown"""
     meds = [m.strip() for m in medicines.split(",") if m.strip()]
     if not meds:
         return "❌ No medicines provided."
 
-    with httpx.Client(timeout=30) as client:
+    with httpx.Client(timeout=HTTP_TIMEOUT) as client:
         # 1. Drug matching
         r1 = client.post(DIAGNOSE_URL, json=meds)
         r1.raise_for_status()
@@ -22,32 +23,38 @@ def run_pipeline(medicines: str):
         if not drugs:
             return "❌ No drug matches found."
 
-        # 2. Build condition list
-        conditions = [
-            Condition(
-                name=d.get("matched_drug", {}).get("indications", "")[:60].strip(),
-                icd10=None,
-                confidence=d.get("confidence", 0.9),
-            ).dict()
-            for d in drugs
-            if d.get("matched_drug", {}).get("indications")
-        ]
+        # 2. Build condition list with exact Pydantic schema
+        conditions = []
+        for d in drugs:
+            drug = d.get("matched_drug", {})
+            indications = drug.get("indications")
+            if indications:
+                conditions.append(
+                    Condition(
+                        name=indications[:60].strip(),
+                        icd10=None,
+                        confidence=d.get("confidence", 0.9),
+                    ).dict()
+                )
+
         if not conditions:
             return "❌ No indications extracted."
 
-        # 3. Generate guideline
-        r2 = client.post(API_URL, json=conditions)
+        # 3. Generate & format guideline
+        r2 = client.post(GUIDELINES_URL, json=conditions)
         r2.raise_for_status()
-        guideline_data = r2.json()["guideline"]
-        guideline = PatientGuideline(**guideline_data)
+        guideline = PatientGuideline(**r2.json()["guideline"])
         return to_markdown(guideline)
 
 
 iface = gr.Interface(
     fn=run_pipeline,
-    inputs=gr.Textbox(label="Medicines (comma-separated)"),
+    inputs=gr.Textbox(
+        label="Medicines (comma-separated)",
+        placeholder="e.g. Metformin, Lisinopril",
+    ),
     outputs=gr.Markdown(label="Patient-friendly Guideline"),
-    title="RAG-Med Demo",
+    title="RAG-Med Assistant",
     examples=[["Metformin, Lisinopril"]],
 )
 
