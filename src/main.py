@@ -27,6 +27,7 @@ generator = RAGGenerator()
 @app.post("/diagnose")
 async def diagnose(medicines: list[str]):
     """Step 1: drug → conditions"""
+    print(f"Received medicines: {medicines}")
     drugs = [matcher.match(m) for m in medicines]
     flat = [d for sub in drugs for d in sub]
     return {"matched_drugs": [d.dict() for d in flat]}
@@ -35,6 +36,7 @@ async def diagnose(medicines: list[str]):
 @app.post("/guidelines")
 async def guidelines(conditions: list[ConditionSchema]):
     """Step 2+3+4: conditions → chunks → LLM → formatted"""
+    print(f"Received conditions: {conditions}")
     chunks = retriever.retrieve(conditions)
     guideline = generator.generate(conditions, chunks)
     return {"guideline": guideline.dict(), "markdown": to_markdown(guideline)}
