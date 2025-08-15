@@ -43,6 +43,7 @@ dependencies = [
     "scispacy>=0.5.5",
     "bitsandbytes>=0.47.0",
     "accelerate>=1.10.0",
+    "google-generativeai>=0.8.5",
 ]
 
 [project.optional-dependencies]
